@@ -39,13 +39,11 @@ let bingo = {
 };
 
 // Genera un numero aleatorio desde  1 hasta la length
-
 const generateNumberRandom = (length) => {
   return (numberRandom = Math.floor(Math.random() * length));
 };
 
 // Llenado de valores del bingo con sus numero respectivos
-
 const valuesLetter = () => {
   for (let i in dictionaryBingo) {
     let obj = dictionaryBingo[i];
