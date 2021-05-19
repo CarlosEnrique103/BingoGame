@@ -36,6 +36,7 @@ app.get('/api/bingo/number', function (req, res) {
 });
 
 
+
 app.get('/api/bingo/primer', function (req, res) {
 
     let numberRandom = Math.floor(Math.random() * lengthBingo) + 1;
