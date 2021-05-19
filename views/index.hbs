@@ -1,0 +1,32 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <title>Bingo</title>
+  </head>
+  <body>
+    <h1>Generador de Numeros de bingo</h1>
+    <p>Numero: <span class="number">0</span></p>
+    <button id="btn-generate-number" class="btn btn-primary">Generar numero</button>
+    <script src="../public/app.js"></script>
+    <script>
+
+      let number = document.querySelector(".number"); 
+      let btn = document.querySelector("#btn-generate-number"); 
+      const getNumber = async () => { 
+        const response = await fetch('http://localhost:3000/api/bingo/number'); 
+        const data = await response.json(); return data.number; } 
+        btn.addEventListener('click', async () => { 
+          number.innerHTML = await getNumber(); 
+      })
+      
+    </script>
+  </body>
+</html>
